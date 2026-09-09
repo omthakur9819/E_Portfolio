@@ -10,6 +10,7 @@ const activitiesContent: Record<
     pledgePoster?: string;
     evidenceImages?: string[];
     pdfUrl?: string;
+    liveUrl?: string;
     evidence: { label: string; url?: string; type: string }[];
     whatILearned: string;
     sustainabilityConnection: string;
@@ -112,6 +113,40 @@ const activitiesContent: Record<
       { title: "Central Pollution Control Board (CPCB) India — E-Waste Management Rules", link: "https://cpcb.nic.in" },
     ],
   },
+  4: {
+    activityTitle: "Activity 04: Data Analysis: India E-Waste Growth Analytics & Circularity Assessment",
+    objective:
+      "To conduct quantitative data analytics on 25,200+ Indian municipal e-waste records (2015–2026), perform normalized peer-group benchmarking across major urban centers (Mumbai, Delhi, Bangalore, Pune, Kolkata), and evaluate systemic circularity gaps, collection bottlenecks, and formal recycling leakage.",
+    evidenceImages: [
+      "/activity4_analytics_overview.png",
+      "/activity4_analytics_peer_benchmarking.png",
+      "/activity4_analytics_growth_trends.png",
+    ],
+    liveUrl: "https://india-ewaste-analytics-rukaryjpzq4futpejbkf3v.streamlit.app/?peers=Mumbai%2CDelhi%2CBangalore%2CPune%2CKolkata",
+    evidence: [
+      { label: "Interactive Dashboard — India E-Waste Observatory", url: "https://india-ewaste-analytics-rukaryjpzq4futpejbkf3v.streamlit.app/?peers=Mumbai%2CDelhi%2CBangalore%2CPune%2CKolkata", type: "Streamlit Web Application" },
+      { label: "Overview & Multi-City KPI Observatory", url: "/activity4_analytics_overview.png", type: "Dashboard Screenshot" },
+      { label: "Normalized Peer Benchmarking Analysis (Mumbai, Delhi, Bangalore, Pune, Kolkata)", url: "/activity4_analytics_peer_benchmarking.png", type: "Analytics Chart" },
+      { label: "Longitudinal E-Waste Trajectory & State-Level Rankings (2015–2026)", url: "/activity4_analytics_growth_trends.png", type: "Trajectory Chart" },
+    ],
+    whatILearned:
+      "Analyzing longitudinal municipal data (2015–2026) across 25,200+ records revealed an aggressive 11-year CAGR of +7.56% in daily e-waste generation, surging from 770 T/D in 2015 to over 1,716 T/D in 2026, with an aggregate active volume exceeding 10,135 T/D. In comparative peer benchmarking, metropolitan hubs exhibited contrasting dynamics: Maharashtra generates the highest daily e-waste volume led by Mumbai and Pune, while Delhi and Bangalore experienced the sharpest post-2020 acceleration driven by rapid consumer electronics turnover and IT hardware decommission cycles. Crucially, the data exposed a severe systemic bottleneck: municipal collection efficiency plateaus at 50.8%, while formal recycling captures only 43.0% of generated volume. This indicates that over 50% of discarded electronics leak into the informal, unregulated sector or unmanaged dumpsites, resulting in toxic heavy metal leaching and substantial rare earth mineral losses.",
+    sustainabilityConnection:
+      "Data-driven circularity analytics bridges empirical waste accounting with actionable environmental policy. Identifying collection bottlenecks (50.8% efficiency) and informal leakage (>50%) proves that expanding formal take-back infrastructure, enforcing Extended Producer Responsibility (EPR) compliance, and utilizing real-time city-level tracking are vital to recovering high-value critical minerals (gold, copper, lithium) and curbing toxic environmental contamination across Indian urban ecosystems.",
+    reflection: {
+      surprisedMe:
+        "That despite India's rapid digital infrastructure expansion, municipal collection efficiency has stagnated around 50.8%, leaving more than half of all discarded electronics to leak into informal, hazardous recycling channels.",
+      challengeFaced:
+        "Normalizing disparate multi-year municipal reporting metrics across diverse tier-1 and metro urban centers (Mumbai vs. Bangalore vs. Delhi) to establish consistent baseline comparisons without data skew.",
+      doDifferently:
+        "Incorporate predictive machine learning forecasting models and real-time municipal sensor telemetry to anticipate local e-waste surge points before seasonal consumer sales and corporate upgrade cycles.",
+    },
+    references: [
+      { title: "India E-Waste Growth Analytics & Material Recovery Observatory (Streamlit Dashboard)", link: "https://india-ewaste-analytics-rukaryjpzq4futpejbkf3v.streamlit.app/?peers=Mumbai%2CDelhi%2CBangalore%2CPune%2CKolkata" },
+      { title: "Central Pollution Control Board (CPCB), MoEFCC, Government of India – National E-Waste Inventory & Processing Capacities under E-Waste (Management) Rules", link: "https://cpcb.nic.in" },
+      { title: "United Nations Institute for Training and Research (UNITAR) & ITU – The Global E-waste Monitor: Quantifying Global E-Waste and the Circular Economy Potential", link: "https://ewastemonitor.info" },
+    ],
+  },
 };
 
 export default async function ActivityPage({
@@ -175,6 +210,8 @@ export default async function ActivityPage({
       ? "Crossword"
       : id === 3
       ? "Carbon Footprint"
+      : id === 4
+      ? "Data Analysis"
       : "Assignment";
 
   return (
@@ -243,32 +280,59 @@ export default async function ActivityPage({
                 <h2 className="text-xs font-mono tracking-widest uppercase text-emerald-400 font-bold flex items-center gap-2">
                   <span>03.</span> EVIDENCE
                 </h2>
-                {data.pdfUrl && (
-                  <a
-                    href={data.pdfUrl}
-                    download="Om_Carbon_Footprint_Worksheet.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-neutral-900 hover:bg-neutral-800 border border-neutral-700 hover:border-emerald-400 text-neutral-200 hover:text-emerald-400 text-xs font-mono tracking-wider uppercase rounded transition-all interactable group"
-                  >
-                    <svg
-                      width="14"
-                      height="14"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="group-hover:translate-y-0.5 transition-transform"
+                <div className="flex items-center gap-3 flex-wrap">
+                  {data.pdfUrl && (
+                    <a
+                      href={data.pdfUrl}
+                      download="Om_Carbon_Footprint_Worksheet.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-neutral-900 hover:bg-neutral-800 border border-neutral-700 hover:border-emerald-400 text-neutral-200 hover:text-emerald-400 text-xs font-mono tracking-wider uppercase rounded transition-all interactable group"
                     >
-                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                      <polyline points="7 10 12 15 17 10" />
-                      <line x1="12" y1="15" x2="12" y2="3" />
-                    </svg>
-                    Download PDF
-                  </a>
-                )}
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="group-hover:translate-y-0.5 transition-transform"
+                      >
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                        <polyline points="7 10 12 15 17 10" />
+                        <line x1="12" y1="15" x2="12" y2="3" />
+                      </svg>
+                      Download PDF
+                    </a>
+                  )}
+                  {data.liveUrl && (
+                    <a
+                      href={data.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-neutral-900 hover:bg-neutral-800 border border-neutral-700 hover:border-emerald-400 text-neutral-200 hover:text-emerald-400 text-xs font-mono tracking-wider uppercase rounded transition-all interactable group"
+                    >
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="group-hover:translate-x-0.5 transition-transform"
+                      >
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                        <polyline points="15 3 21 3 21 9" />
+                        <line x1="10" y1="14" x2="21" y2="3" />
+                      </svg>
+                      Open Live Streamlit Dashboard ↗
+                    </a>
+                  )}
+                </div>
               </div>
 
               {data.evidenceImages && data.evidenceImages.length > 0 ? (

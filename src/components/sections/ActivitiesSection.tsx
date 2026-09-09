@@ -14,6 +14,8 @@ const activitiesData = Array.from({ length: 10 }, (_, i) => {
       ? "Crossword"
       : num === 3
       ? "Carbon Footprint"
+      : num === 4
+      ? "Data Analysis"
       : "Assignment";
 
   const hoverImageUrl =
@@ -23,6 +25,8 @@ const activitiesData = Array.from({ length: 10 }, (_, i) => {
       ? "/crossword_grid.png"
       : num === 3
       ? "/carbon_footprint_p1.png"
+      : num === 4
+      ? "/activity4_analytics_overview.png"
       : `https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=600&auto=format&fit=crop&sig=${num}`;
 
   return {
