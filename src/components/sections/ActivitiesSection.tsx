@@ -4,8 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { cn } from "@/lib/utils";
 
-// Mock JSON data (10 Activities: 1 to 10)
-const activitiesData = Array.from({ length: 10 }, (_, i) => {
+// JSON data (4 Activities: 1 to 4)
+const activitiesData = Array.from({ length: 4 }, (_, i) => {
   const num = i + 1;
   const category =
     num === 1

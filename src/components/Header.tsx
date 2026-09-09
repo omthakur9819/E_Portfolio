@@ -15,8 +15,7 @@ const meSubChapters = [
 
 const activitiesSubChapters = [
   { id: "activities", title: "All Activities" },
-  { id: "assignments-01", title: "Activities 01-05" },
-  { id: "assignments-06", title: "Activities 06-10" },
+  { id: "assignments-01", title: "Activities 01-04" },
 ];
 
 export default function Header() {

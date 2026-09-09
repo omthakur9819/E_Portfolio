@@ -158,7 +158,7 @@ export default async function ActivityPage({
   const rawSlug = resolvedParams?.slug || "";
   const idStr = rawSlug.replace("activity-", "");
   const id = parseInt(idStr, 10);
-  const isValid = !isNaN(id) && id >= 1 && id <= 10;
+  const isValid = !isNaN(id) && id >= 1 && id <= 4;
 
   if (!isValid) {
     return (
