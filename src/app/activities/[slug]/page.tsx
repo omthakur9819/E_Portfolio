@@ -9,6 +9,7 @@ const activitiesContent: Record<
     objective: string;
     pledgePoster?: string;
     evidenceImages?: string[];
+    pdfUrl?: string;
     evidence: { label: string; url?: string; type: string }[];
     whatILearned: string;
     sustainabilityConnection: string;
@@ -75,6 +76,42 @@ const activitiesContent: Record<
       { title: "India Ministry of Environment, Forest and Climate Change (MoEFCC) E-Waste Reports", link: "https://moef.gov.in" },
     ],
   },
+  3: {
+    activityTitle: "Activity 03: The Hidden Carbon Footprint of Our Gadgets",
+    objective:
+      "To calculate personal and digital carbon footprints, assess high-emission lifestyle drivers (transportation, food, and electronics), audit household electronic inventory, and evaluate the environmental lifecycle impact of electronics manufacturing versus extended device longevity.",
+    evidenceImages: [
+      "/carbon_footprint_p1.png",
+      "/carbon_footprint_p2.png",
+      "/carbon_footprint_p3.png",
+      "/carbon_footprint_p4.png",
+    ],
+    pdfUrl: "/om_carbon_footprint.pdf",
+    evidence: [
+      { label: "Graded Worksheet: The Hidden Carbon Footprint of Our Gadgets (Evaluated by Prof. Nilima Main, VIT)", url: "/om_carbon_footprint.pdf", type: "Official Graded PDF" },
+      { label: "Part A & B: Carbon Footprint Calculation & Electronic Lifestyle Audit", url: "/carbon_footprint_p1.png", type: "Worksheet Page 1" },
+      { label: "Part B (cont.) & Part C: Device Inventory & Environmental Engineering Habits", url: "/carbon_footprint_p2.png", type: "Worksheet Page 2" },
+      { label: "Part D: Reflection, Personal Habits & 5Rs Impact Analysis", url: "/carbon_footprint_p3.png", type: "Worksheet Page 3" },
+      { label: "Discussion Questions & Innovative Engineering Solution Proposal", url: "/carbon_footprint_p4.png", type: "Worksheet Page 4" },
+    ],
+    whatILearned:
+      "Calculating my annual carbon footprint revealed an emission output of 34 tCO2e/year compared to the national average of 7 tCO2e and global average of 19 tCO2e, indicating a resource consumption rate requiring 1.8 Earths. While daily transportation and dietary choices proved to be significant personal contributors, investigating electronics life cycles revealed that manufacturing—specifically semiconductor fabrication, cleanroom operations, and raw silicon refining—accounts for the overwhelming majority of a gadget's lifetime emissions rather than active use. Extending smartphone replacement cycles beyond 5 years and choosing component repairs (such as replacing batteries and displays) directly averts the carbon-heavy manufacturing of replacement units. Moreover, auditing household electronics exposed substantial e-waste hoarding (3 unused phones and 7 cables). Because recycling consumes heavy energy and cannot achieve 100% material recovery, strictly practicing the 5Rs—Refuse, Reduce, Reuse, Repair, and Recycle—is critical for sustainable technology lifecycles.",
+    sustainabilityConnection:
+      "Connecting personal carbon audits to hardware engineering demonstrates that device longevity is our most potent strategy against environmental degradation. Designing modular, easily repairable electronics, integrating bio-based PCBs, and writing energy-efficient software directly decrease manufacturing demand, conserve finite materials, and prevent premature gadget retirement to landfills.",
+    reflection: {
+      surprisedMe:
+        "That my annual carbon footprint reached 34 tCO2e requiring 1.8 Earths, and that dietary consumption and device manufacturing stages generate significantly more emissions than daily digital device operation.",
+      challengeFaced:
+        "Confronting electronic hoarding habits (keeping 3 unused phones, 2 chargers, and 7 cables in drawers) and recognizing that recycling alone is an incomplete solution without proactive device reuse and repair.",
+      doDifferently:
+        "Commit to retaining electronics for 5+ years, prioritize hardware repair over replacement, minimize car commute emissions, and advocate for modular, energy-conscious hardware and software architectures in engineering projects.",
+    },
+    references: [
+      { title: "Global Footprint Network — Personal Ecological Footprint & Overshoot Metrics", link: "https://www.footprintnetwork.org" },
+      { title: "EPA Greenhouse Gas Equivalencies & Carbon Calculator", link: "https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator" },
+      { title: "Central Pollution Control Board (CPCB) India — E-Waste Management Rules", link: "https://cpcb.nic.in" },
+    ],
+  },
 };
 
 export default async function ActivityPage({
@@ -131,7 +168,14 @@ export default async function ActivityPage({
 
   const data = activitiesContent[id] || defaultContent;
   const dateStr = `Activity ${String(id).padStart(2, "0")}`;
-  const categoryTag = id === 1 ? "Pledge" : "Crossword";
+  const categoryTag =
+    id === 1
+      ? "Pledge"
+      : id === 2
+      ? "Crossword"
+      : id === 3
+      ? "Carbon Footprint"
+      : "Assignment";
 
   return (
     <div className="min-h-screen bg-[#0B0B0C] text-[#F4F4F5] selection:bg-emerald-400 selection:text-black">
@@ -195,9 +239,37 @@ export default async function ActivityPage({
 
             {/* 3. Evidence */}
             <section className="bg-neutral-950 p-6 md:p-8 rounded-sm border border-neutral-800">
-              <h2 className="text-xs font-mono tracking-widest uppercase text-emerald-400 mb-6 font-bold flex items-center gap-2">
-                <span>03.</span> EVIDENCE
-              </h2>
+              <div className="flex items-center justify-between mb-6 flex-wrap gap-4">
+                <h2 className="text-xs font-mono tracking-widest uppercase text-emerald-400 font-bold flex items-center gap-2">
+                  <span>03.</span> EVIDENCE
+                </h2>
+                {data.pdfUrl && (
+                  <a
+                    href={data.pdfUrl}
+                    download="Om_Carbon_Footprint_Worksheet.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-neutral-900 hover:bg-neutral-800 border border-neutral-700 hover:border-emerald-400 text-neutral-200 hover:text-emerald-400 text-xs font-mono tracking-wider uppercase rounded transition-all interactable group"
+                  >
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="group-hover:translate-y-0.5 transition-transform"
+                    >
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                      <polyline points="7 10 12 15 17 10" />
+                      <line x1="12" y1="15" x2="12" y2="3" />
+                    </svg>
+                    Download PDF
+                  </a>
+                )}
+              </div>
 
               {data.evidenceImages && data.evidenceImages.length > 0 ? (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

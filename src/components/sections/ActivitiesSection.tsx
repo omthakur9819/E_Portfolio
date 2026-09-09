@@ -7,12 +7,30 @@ import { cn } from "@/lib/utils";
 // Mock JSON data (10 Activities: 1 to 10)
 const activitiesData = Array.from({ length: 10 }, (_, i) => {
   const num = i + 1;
+  const category =
+    num === 1
+      ? "Pledge"
+      : num === 2
+      ? "Crossword"
+      : num === 3
+      ? "Carbon Footprint"
+      : "Assignment";
+
+  const hoverImageUrl =
+    num === 1
+      ? "/pledge_poster.png"
+      : num === 2
+      ? "/crossword_grid.png"
+      : num === 3
+      ? "/carbon_footprint_p1.png"
+      : `https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=600&auto=format&fit=crop&sig=${num}`;
+
   return {
     id: num,
     date: `Activity ${String(num).padStart(2, '0')}`,
     title: `ACTIVITY ${num}`,
-    category: num === 1 ? "Pledge" : "Crossword",
-    hoverImageUrl: `https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=600&auto=format&fit=crop&sig=${num}`,
+    category,
+    hoverImageUrl,
     slug: `/activities/activity-${num}`,
   };
 });

@@ -1,4 +1,4 @@
-# E-Portfolio (3.0)
+# E-Portfolio EWEM
 
 A modern, highly interactive personal portfolio website built with **Next.js 16**, **React 19**, **Tailwind CSS v4**, and smooth animations powered by **GSAP** and **Lenis Scroll**.
 
