@@ -147,6 +147,41 @@ const activitiesContent: Record<
       { title: "United Nations Institute for Training and Research (UNITAR) & ITU – The Global E-waste Monitor: Quantifying Global E-Waste and the Circular Economy Potential", link: "https://ewastemonitor.info" },
     ],
   },
+  5: {
+    activityTitle: "Activity 05: Video Task — E-Waste Recycling",
+    objective:
+      "To understand the core principles of electronic waste recycling, identify valuable recoverable metals (such as gold and copper), contrast safe plant processing against destructive dumping and open burning, and explore how closed-loop material recovery drives the circular economy through a 10-question video assessment.",
+    evidenceImages: ["/video_task_proof.png"],
+    evidence: [
+      {
+        label: "Verified Video Assessment Scorecard (100% Accuracy, 10/10 Streak, Score: 7500)",
+        url: "/video_task_proof.png",
+        type: "Evaluation Proof",
+      },
+      {
+        label: "E-Waste Recycling Video Learning & 10-Question Conceptual Assessment",
+        type: "Interactive Video Task",
+      },
+    ],
+    whatILearned:
+      "Engaging with the E-Waste Recycling video task reinforced fundamental concepts of responsible electronic waste management and sustainable material recovery. I learned that discarded electronic devices are not worthless trash to be discarded, but retain substantial value because they contain high-grade recoverable materials—most notably precious and industrial metals such as gold and copper. Instead of resorting to destructive practices like open burning, open dumping, or disposal in regular municipal landfills—which cause severe environmental pollution, soil degradation, and water contamination—dedicated recycling plants systematically process e-waste to recover these useful materials safely. Furthermore, the assessment emphasized that secondary resource extraction from electronic scrap directly powers the circular economy, keeping materials in continuous productive use rather than linear disposal. Achieving a 100% score across all 10 questions validated the video's core message: properly recycled e-waste transforms an urgent ecological liability into an invaluable source of sustainable resources.",
+    sustainabilityConnection:
+      "The questions in this video evaluation directly reflect key sustainability challenges in modern electrical and computer engineering. Improper disposal through open burning or uncontrolled dumping releases toxic heavy metals into ecosystems, contaminating soil and groundwater while wasting finite minerals. When electronic waste is directed to certified recycling plants, recovering copper and gold dramatically reduces the demand for virgin geological mining—an extractive process that accounts for immense greenhouse gas emissions, deforestation, and fossil fuel consumption. Closing the materials loop supports the circular economy model, ensuring that discarded hardware continues to fuel sustainable manufacturing cycles without depleting planetary boundaries.",
+    reflection: {
+      surprisedMe:
+        "How common misconceptions treat discarded electronics as mere junk, whereas in reality, electronic scrap contains significantly higher concentrations of recoverable, valuable metals like gold and copper than natural raw ores.",
+      challengeFaced:
+        "Synthesizing how individual consumer actions—such as avoiding open dumping and refusing to throw electronics into regular household trash—directly connect to macro-level circular economy outcomes under timed assessment questions.",
+      doDifferently:
+        "Actively champion responsible electronic disposal by establishing community collection points, refusing to mix electronics with general garbage, and designing digital products that prioritize modular repair and material recovery.",
+    },
+    references: [
+      {
+        title: "Wayground Assessment Platform (https://wayground.com/join)",
+        link: "https://wayground.com/join",
+      },
+    ],
+  },
 };
 
 export default async function ActivityPage({
@@ -158,7 +193,7 @@ export default async function ActivityPage({
   const rawSlug = resolvedParams?.slug || "";
   const idStr = rawSlug.replace("activity-", "");
   const id = parseInt(idStr, 10);
-  const isValid = !isNaN(id) && id >= 1 && id <= 4;
+  const isValid = !isNaN(id) && id >= 1 && id <= 5;
 
   if (!isValid) {
     return (
@@ -212,6 +247,8 @@ export default async function ActivityPage({
       ? "Carbon Footprint"
       : id === 4
       ? "Data Analysis"
+      : id === 5
+      ? "Video Task"
       : "Assignment";
 
   return (
@@ -336,9 +373,14 @@ export default async function ActivityPage({
               </div>
 
               {data.evidenceImages && data.evidenceImages.length > 0 ? (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className={data.evidenceImages.length === 1 ? "flex justify-center" : "grid grid-cols-1 md:grid-cols-2 gap-6"}>
                   {data.evidenceImages.map((imgUrl, idx) => (
-                    <div key={idx} className="overflow-hidden rounded border border-neutral-800 bg-white flex justify-center p-4">
+                    <div
+                      key={idx}
+                      className={`overflow-hidden rounded border border-neutral-800 flex justify-center p-4 ${
+                        imgUrl.includes("video_task") ? "bg-neutral-950 max-w-xl w-full" : "bg-white"
+                      }`}
+                    >
                       <a href={imgUrl} target="_blank" rel="noopener noreferrer" className="block cursor-pointer group w-full h-full flex items-center justify-center">
                         <img
                           src={imgUrl}
