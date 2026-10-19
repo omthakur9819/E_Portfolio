@@ -11,6 +11,18 @@ const activitiesContent: Record<
     evidenceImages?: string[];
     pdfUrl?: string;
     liveUrl?: string;
+    instagramUrl?: string;
+    campaignInfo?: {
+      eventName: string;
+      date: string;
+      venue: string;
+      organizer: string;
+      instagramHandle: string;
+      instagramUrl: string;
+      speech: string;
+      publicityMessage: string;
+      highlights: string[];
+    };
     evidence: { label: string; url?: string; type: string }[];
     whatILearned: string;
     sustainabilityConnection: string;
@@ -182,6 +194,143 @@ const activitiesContent: Record<
       },
     ],
   },
+  6: {
+    activityTitle:
+      "Activity 06: Awareness Campaign — EcoCycle 2026: The E-Waste Action Challenge",
+    objective:
+      "To plan, coordinate, and execute an on-ground campus awareness campaign, interactive classroom publicity drive, and electronic waste collection initiative (EcoCycle 2026) organized by TE INFT students at Vidyalankar Institute of Technology (VIT). The campaign aimed to educate engineering peers on responsible disposal of dead batteries, broken chargers, old phones, and discarded cables; incentivize sustainable recycling habits through a knowledge assessment quiz with an E-Waste Champion Certificate (70%+ score threshold) and live leaderboard; and mobilize donations for the collection drive at VIT Plaza backed by digital community outreach on Instagram (@gadgets2green).",
+    instagramUrl:
+      "https://www.instagram.com/gadgets2green?xtok=OGY3bWtqOG0xbW53",
+    campaignInfo: {
+      eventName: "EcoCycle 2026: The E-Waste Action Challenge",
+      date: "14th October 2026",
+      venue: "VIT Plaza, Vidyalankar Institute of Technology",
+      organizer: "Students of TE INFT",
+      instagramHandle: "@gadgets2green",
+      instagramUrl:
+        "https://www.instagram.com/gadgets2green?xtok=OGY3bWtqOG0xbW53",
+      speech: `Hey everyone, just a minute!
+
+We’re organizing EcoCycle 2026: The E-Waste Action Challenge, as part of the E-Waste Awareness Campaign organized by the students of TE INFT.
+
+Think about all the old phones, broken chargers, cables, and dead batteries lying around at home. Instead of throwing them in the regular dustbin, let’s learn how to dispose of them responsibly!
+
+Join us on 14th October at VIT Plaza for an interactive e-waste recycling challenge, an exciting quiz, and a live leaderboard. Score 70% or above in the quiz to earn your E-Waste Champion Certificate!
+
+You can also discover nearby e-waste collection points. And yes, do bring your old or unused e-waste gadgets for our collection drive!
+
+Scan the QR code on the poster to participate, and follow our Instagram page @gadgets2green for updates.
+
+So, everyone, come participate and encourage your friends to join in!
+
+Don't trash the future. Recycle your e-waste!
+
+Thank you!`,
+      publicityMessage: `🌍 E-WASTE AWARENESS CAMPAIGN 2026 🌍
+Organized by Students of TE INFT
+♻️ Give Your Gadgets a Responsible Goodbye! 🌱
+
+Hey Everyone!!
+
+Do you know where your old phones, chargers, cables, and dead batteries belong? 🔋📱
+
+It's time to take a step towards a greener future! Join us for EcoCycle 2026: The E-Waste Action Challenge and turn your awareness into action! 💚
+
+📅 Date: 14th October 2026
+📍 Venue: VIT Plaza
+
+🎯 What's in store for you?
+♻️ Take on an interactive e-waste recycling challenge.
+🧠 Test your knowledge with an exciting quiz.
+🏆 Score 70% or more to earn your E-Waste Champion Certificate and compete on the live leaderboard.
+📍 Discover nearby e-waste drop-off points for old chargers, phones, cables, and batteries.
+
+📲 Scan the QR code on the poster to participate!
+Do bring your old/unused e-waste gadgets for the collection drive !!
+
+📸 Follow our Instagram channel for updates, exciting content, and campaign highlights! 💚
+🔗 Instagram: https://www.instagram.com/gadgets2green?xtok=OGY3bWtqOG0xbW53
+
+🌎 Every small action counts. Let's reduce electronic waste, protect our planet, and build a sustainable future together.
+💚 Don't trash the future. Recycle your e-waste! ♻️
+✨ Let's go green, one gadget at a time! 🌱
+
+📢 Don't forget to FOLLOW, SHARE, and SPREAD THE WORD! Encourage your friends and classmates to join the movement. Together, let's make our campus greener! 💚♻️`,
+      highlights: [
+        "Interactive E-Waste Recycling Challenge",
+        "Knowledge Assessment Quiz with Live Leaderboard",
+        "E-Waste Champion Certificate (Score ≥ 70%)",
+        "Campus Gadget Collection Drive at VIT Plaza",
+        "Mapping of Certified Regional E-Waste Drop-Off Points",
+        "Social Media Campaign Outreach via @gadgets2green",
+      ],
+    },
+    evidenceImages: [
+      "/awareness_campaign_1.jpg",
+      "/awareness_campaign_2.jpg",
+      "/awareness_campaign_3.jpg",
+    ],
+    evidence: [
+      {
+        label:
+          "Classroom Publicity Pitch: Launching EcoCycle 2026 across TE INFT Classrooms",
+        url: "/awareness_campaign_1.jpg",
+        type: "Classroom Campaign Session",
+      },
+      {
+        label:
+          "Peer Engagement & Active Audience Dialogue on Responsible Gadget Disposal",
+        url: "/awareness_campaign_2.jpg",
+        type: "Audience Interaction",
+      },
+      {
+        label:
+          "Speaker Delivery & VIT Plaza Gadget Collection Drive Briefing",
+        url: "/awareness_campaign_3.jpg",
+        type: "Campaign Delivery",
+      },
+      {
+        label:
+          "Official Campaign Instagram Channel & Digital Outreach (@gadgets2green)",
+        url: "https://www.instagram.com/gadgets2green?xtok=OGY3bWtqOG0xbW53",
+        type: "Social Media Campaign",
+      },
+    ],
+    whatILearned:
+      "Planning and executing the EcoCycle 2026 awareness campaign and pitching directly to engineering classrooms provided firsthand experience in environmental advocacy, public speaking, and community-driven sustainability initiatives. I learned that while fellow students recognize the overarching concept of e-waste, widespread misconceptions persist regarding smaller electronics—most peers routinely hoard dead batteries, defunct chargers, and obsolete cables in study desks or dump them into regular municipal bins simply because accessible drop-off points are unfamiliar. Delivering a concise, 1-minute classroom pitch taught me how to distill ecological urgency into concrete, accessible steps: visiting the VIT Plaza drive on 14th October and participating in our gamified quiz. Introducing a tangible performance incentive—an E-Waste Champion Certificate for scores of 70% and above, coupled with a real-time leaderboard—dramatically boosted student engagement compared to passive posters. Combining direct classroom dialogue with digital channels (@gadgets2green) reinforced that engineering leadership requires marrying technical literacy with communicative mobilization to spark collective environmental stewardship.",
+    sustainabilityConnection:
+      "Electronic waste represents India's fastest-growing municipal waste stream, fueled by hyper-accelerated consumer gadget replacement cycles. Small household peripherals—particularly dead lithium-ion batteries, fractured charging bricks, and discarded copper wires—are the most susceptible to improper disposal in municipal landfills. When exposed to weathering and landfill leaching, these items release potent toxins such as lead, cadmium, and volatile lithium into soil aquifers, while burning generates hazardous atmospheric dioxins. Concurrently, they sequester non-renewable resources, including high-purity copper, tin, and rare earth elements that require energy-intensive geological mining to replenish. By mobilizing the TE INFT student body through EcoCycle 2026 and establishing a centralized collection drive at VIT Plaza, our campaign directly diverted obsolete electronic gadgets into formal, certified recovery channels. Educating future software and systems engineers to practice responsible lifecycle stewardship curbs virgin mineral extraction and reduces computational carbon footprints.",
+    reflection: {
+      surprisedMe:
+        "The immediate enthusiasm and competitive spirit sparked by gamifying e-waste education. When peers learned they could earn an official E-Waste Champion Certificate by scoring 70%+ on our quiz and compete on a live leaderboard, engagement skyrocketed compared to traditional informational flyers.",
+      challengeFaced:
+        "Delivering a high-impact, persuasive campaign pitch in under two minutes during lecture transitions, ensuring students clearly grasped the drive date (14th October), venue (VIT Plaza), target items (chargers, batteries, cables, phones), and QR code registration without disrupting academic schedules.",
+      doDifferently:
+        "Place dedicated, tamper-proof e-waste collection bins directly outside departmental laboratories several days prior to the event, and set up an interactive tablet kiosk during classroom breaks so students can test their knowledge on the live quiz immediately.",
+    },
+    references: [
+      {
+        title:
+          "EcoCycle 2026: Official Campaign Channel — @gadgets2green (Instagram)",
+        link: "https://www.instagram.com/gadgets2green?xtok=OGY3bWtqOG0xbW53",
+      },
+      {
+        title:
+          "Central Pollution Control Board (CPCB), MoEFCC — E-Waste Management Rules & Drop-Off Infrastructure",
+        link: "https://cpcb.nic.in",
+      },
+      {
+        title:
+          "Ministry of Electronics and Information Technology (MeitY) — Awareness Program on Environmental Hazards of Electronic Waste",
+        link: "https://www.meity.gov.in",
+      },
+      {
+        title:
+          "Vidyalankar Institute of Technology (VIT), Mumbai — Department of Information Technology",
+        link: "https://vit.edu.in",
+      },
+    ],
+  },
 };
 
 export default async function ActivityPage({
@@ -193,7 +342,7 @@ export default async function ActivityPage({
   const rawSlug = resolvedParams?.slug || "";
   const idStr = rawSlug.replace("activity-", "");
   const id = parseInt(idStr, 10);
-  const isValid = !isNaN(id) && id >= 1 && id <= 5;
+  const isValid = !isNaN(id) && id >= 1 && id <= 6;
 
   if (!isValid) {
     return (
@@ -249,6 +398,8 @@ export default async function ActivityPage({
       ? "Data Analysis"
       : id === 5
       ? "Video Task"
+      : id === 6
+      ? "Awareness Campaign"
       : "Assignment";
 
   return (
@@ -302,13 +453,124 @@ export default async function ActivityPage({
           {/* Structured Headings Grid */}
           <div className="flex flex-col gap-12 border-t border-neutral-800 pt-12">
             {/* 2. Objective */}
-            <section className="bg-neutral-950 p-6 md:p-8 rounded-sm border border-neutral-800">
-              <h2 className="text-xs font-mono tracking-widest uppercase text-emerald-400 mb-4 font-bold flex items-center gap-2">
-                <span>02.</span> OBJECTIVE
-              </h2>
-              <p className="text-base sm:text-xl text-neutral-200 font-normal leading-relaxed">
-                {data.objective}
-              </p>
+            <section className="bg-neutral-950 p-6 md:p-8 rounded-sm border border-neutral-800 flex flex-col gap-8">
+              <div>
+                <h2 className="text-xs font-mono tracking-widest uppercase text-emerald-400 mb-4 font-bold flex items-center gap-2">
+                  <span>02.</span> OBJECTIVE
+                </h2>
+                <p className="text-base sm:text-xl text-neutral-200 font-normal leading-relaxed">
+                  {data.objective}
+                </p>
+              </div>
+
+              {data.campaignInfo && (
+                <div className="flex flex-col gap-6 pt-6 border-t border-neutral-800/80">
+                  {/* Campaign Key Metrics Bar */}
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                    <div className="p-3.5 bg-neutral-900/60 rounded border border-neutral-800">
+                      <div className="text-[10px] font-mono uppercase tracking-wider text-neutral-400">
+                        Date
+                      </div>
+                      <div className="text-sm sm:text-base font-bold text-white mt-1 flex items-center gap-2">
+                        <span>📅</span> {data.campaignInfo.date}
+                      </div>
+                    </div>
+                    <div className="p-3.5 bg-neutral-900/60 rounded border border-neutral-800">
+                      <div className="text-[10px] font-mono uppercase tracking-wider text-neutral-400">
+                        Venue
+                      </div>
+                      <div className="text-sm sm:text-base font-bold text-white mt-1 flex items-center gap-2">
+                        <span>📍</span> {data.campaignInfo.venue}
+                      </div>
+                    </div>
+                    <div className="p-3.5 bg-neutral-900/60 rounded border border-neutral-800">
+                      <div className="text-[10px] font-mono uppercase tracking-wider text-neutral-400">
+                        Organized By
+                      </div>
+                      <div className="text-sm sm:text-base font-bold text-emerald-400 mt-1 flex items-center gap-2">
+                        <span>👥</span> {data.campaignInfo.organizer}
+                      </div>
+                    </div>
+                    <div className="p-3.5 bg-neutral-900/60 rounded border border-neutral-800">
+                      <div className="text-[10px] font-mono uppercase tracking-wider text-neutral-400">
+                        Quiz Incentive
+                      </div>
+                      <div className="text-sm sm:text-base font-bold text-yellow-400 mt-1 flex items-center gap-2">
+                        <span>🏆</span> ≥ 70% Certificate
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Highlights Pill Badges */}
+                  <div className="flex flex-wrap gap-2">
+                    {data.campaignInfo.highlights.map((h, i) => (
+                      <span
+                        key={i}
+                        className="text-xs font-mono px-3 py-1 bg-neutral-900 border border-neutral-700/60 rounded-full text-neutral-300"
+                      >
+                        ✓ {h}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Spoken Pitch & Publicity Broadcast Grid */}
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-2">
+                    {/* 1. Spoken Classroom Pitch */}
+                    <div className="p-5 md:p-6 bg-gradient-to-br from-neutral-900 to-neutral-950 rounded border border-emerald-500/20 shadow-lg relative overflow-hidden flex flex-col justify-between">
+                      <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 rounded-full blur-2xl pointer-events-none" />
+                      <div>
+                        <div className="flex items-center justify-between mb-4">
+                          <span className="text-xs font-mono uppercase tracking-widest text-emerald-400 font-semibold flex items-center gap-2">
+                            <span>🎤</span> Spoken Classroom Pitch
+                          </span>
+                          <span className="text-[11px] font-mono text-neutral-400 bg-neutral-800/80 px-2 py-0.5 rounded">
+                            Delivered Live to Peers
+                          </span>
+                        </div>
+                        <div className="font-sans text-neutral-200 text-sm sm:text-base leading-relaxed whitespace-pre-line border-l-2 border-emerald-400/50 pl-4 py-1 italic">
+                          {data.campaignInfo.speech}
+                        </div>
+                      </div>
+                      <div className="mt-5 pt-3 border-t border-neutral-800 flex items-center justify-between text-xs font-mono text-neutral-400">
+                        <span>Speaker: Om Thakur & TE INFT Team</span>
+                        <span className="text-emerald-400">Classroom Outreach</span>
+                      </div>
+                    </div>
+
+                    {/* 2. Official Publicity Broadcast Message */}
+                    <div className="p-5 md:p-6 bg-neutral-900/90 rounded border border-neutral-800 shadow-lg flex flex-col justify-between">
+                      <div>
+                        <div className="flex items-center justify-between mb-4">
+                          <span className="text-xs font-mono uppercase tracking-widest text-emerald-400 font-semibold flex items-center gap-2">
+                            <span>📢</span> Campaign Broadcast Announcement
+                          </span>
+                          <span className="text-[11px] font-mono text-neutral-400 bg-neutral-800/80 px-2 py-0.5 rounded">
+                            Broadcast & Posters
+                          </span>
+                        </div>
+                        <div className="font-mono text-xs sm:text-sm text-neutral-300 leading-relaxed whitespace-pre-line bg-black/40 p-4 rounded border border-neutral-800 max-h-[380px] overflow-y-auto">
+                          {data.campaignInfo.publicityMessage}
+                        </div>
+                      </div>
+                      {data.campaignInfo.instagramUrl && (
+                        <div className="mt-4 pt-3 border-t border-neutral-800 flex items-center justify-between">
+                          <span className="text-xs font-mono text-neutral-400">
+                            Follow @gadgets2green for updates
+                          </span>
+                          <a
+                            href={data.campaignInfo.instagramUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-400 hover:text-emerald-300 underline interactable"
+                          >
+                            Open Instagram Channel ↗
+                          </a>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              )}
             </section>
 
             {/* 3. Evidence */}
@@ -369,37 +631,148 @@ export default async function ActivityPage({
                       Open Live Streamlit Dashboard ↗
                     </a>
                   )}
+                  {data.instagramUrl && (
+                    <a
+                      href={data.instagramUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-neutral-900 hover:bg-neutral-800 border border-neutral-700 hover:border-pink-500 text-neutral-200 hover:text-pink-400 text-xs font-mono tracking-wider uppercase rounded transition-all interactable group"
+                    >
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="group-hover:scale-110 transition-transform text-pink-400"
+                      >
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                      </svg>
+                      Instagram: @gadgets2green ↗
+                    </a>
+                  )}
                 </div>
               </div>
 
               {data.evidenceImages && data.evidenceImages.length > 0 ? (
-                <div className={data.evidenceImages.length === 1 ? "flex justify-center" : "grid grid-cols-1 md:grid-cols-2 gap-6"}>
-                  {data.evidenceImages.map((imgUrl, idx) => (
-                    <div
-                      key={idx}
-                      className={`overflow-hidden rounded border border-neutral-800 flex justify-center p-4 ${
-                        imgUrl.includes("video_task") ? "bg-neutral-950 max-w-xl w-full" : "bg-white"
-                      }`}
-                    >
-                      <a href={imgUrl} target="_blank" rel="noopener noreferrer" className="block cursor-pointer group w-full h-full flex items-center justify-center">
-                        <img
-                          src={imgUrl}
-                          alt={`Evidence Image ${idx + 1}`}
-                          className="max-h-[600px] w-auto object-contain rounded shadow-lg transition-transform duration-500 group-hover:scale-[1.02]"
-                        />
-                      </a>
-                    </div>
-                  ))}
+                <div className="flex flex-col gap-8">
+                  <div
+                    className={
+                      data.evidenceImages.length === 1
+                        ? "flex justify-center"
+                        : data.evidenceImages.length === 3
+                        ? "grid grid-cols-1 md:grid-cols-3 gap-6"
+                        : "grid grid-cols-1 md:grid-cols-2 gap-6"
+                    }
+                  >
+                    {data.evidenceImages.map((imgUrl, idx) => (
+                      <div
+                        key={idx}
+                        className={`overflow-hidden rounded border border-neutral-800 flex justify-center p-3 transition-colors ${
+                          imgUrl.includes("video_task")
+                            ? "bg-neutral-950 max-w-xl w-full"
+                            : imgUrl.includes("awareness_campaign")
+                            ? "bg-neutral-900/90 w-full"
+                            : "bg-white"
+                        }`}
+                      >
+                        <a
+                          href={imgUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block cursor-pointer group w-full h-full flex items-center justify-center"
+                        >
+                          <img
+                            src={imgUrl}
+                            alt={`Evidence Image ${idx + 1}`}
+                            className="max-h-[550px] w-auto object-contain rounded shadow-lg transition-transform duration-500 group-hover:scale-[1.02]"
+                          />
+                        </a>
+                      </div>
+                    ))}
+                  </div>
+
+                  {data.evidence && data.evidence.length > 0 && (
+                    <ul className="flex flex-col gap-3">
+                      {data.evidence.map((item, idx) => (
+                        <li
+                          key={idx}
+                          className="flex flex-col sm:flex-row sm:items-center justify-between p-4 bg-neutral-900/80 rounded border border-neutral-800/80 gap-3"
+                        >
+                          <div className="flex items-center gap-3">
+                            <span className="text-emerald-400 font-mono text-sm">📁</span>
+                            <span className="text-sm sm:text-base font-semibold text-white">
+                              {item.label}
+                            </span>
+                          </div>
+                          <div className="flex items-center gap-3">
+                            <span className="text-xs font-mono text-neutral-400 uppercase bg-neutral-800 px-2.5 py-1 rounded">
+                              {item.type}
+                            </span>
+                            {item.url && (
+                              <a
+                                href={item.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-xs font-mono text-emerald-400 underline hover:text-emerald-300 interactable"
+                              >
+                                View File ↗
+                              </a>
+                            )}
+                          </div>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
               ) : data.pledgePoster ? (
-                <div className="overflow-hidden rounded border border-neutral-800 bg-neutral-900 flex justify-center p-4">
-                  <a href={data.pledgePoster} target="_blank" rel="noopener noreferrer" className="block cursor-pointer group">
-                    <img
-                      src={data.pledgePoster}
-                      alt="Signed Sustainability Commitment Certificate"
-                      className="max-h-[650px] w-auto object-contain rounded shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]"
-                    />
-                  </a>
+                <div className="flex flex-col gap-8">
+                  <div className="overflow-hidden rounded border border-neutral-800 bg-neutral-900 flex justify-center p-4">
+                    <a href={data.pledgePoster} target="_blank" rel="noopener noreferrer" className="block cursor-pointer group">
+                      <img
+                        src={data.pledgePoster}
+                        alt="Signed Sustainability Commitment Certificate"
+                        className="max-h-[650px] w-auto object-contain rounded shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]"
+                      />
+                    </a>
+                  </div>
+                  {data.evidence && data.evidence.length > 0 && (
+                    <ul className="flex flex-col gap-3">
+                      {data.evidence.map((item, idx) => (
+                        <li
+                          key={idx}
+                          className="flex flex-col sm:flex-row sm:items-center justify-between p-4 bg-neutral-900/80 rounded border border-neutral-800/80 gap-3"
+                        >
+                          <div className="flex items-center gap-3">
+                            <span className="text-emerald-400 font-mono text-sm">📁</span>
+                            <span className="text-sm sm:text-base font-semibold text-white">
+                              {item.label}
+                            </span>
+                          </div>
+                          <div className="flex items-center gap-3">
+                            <span className="text-xs font-mono text-neutral-400 uppercase bg-neutral-800 px-2.5 py-1 rounded">
+                              {item.type}
+                            </span>
+                            {item.url && (
+                              <a
+                                href={item.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-xs font-mono text-emerald-400 underline hover:text-emerald-300 interactable"
+                              >
+                                View Link ↗
+                              </a>
+                            )}
+                          </div>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
               ) : (
                 <ul className="flex flex-col gap-4">

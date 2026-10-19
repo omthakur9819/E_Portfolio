@@ -4,8 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { cn } from "@/lib/utils";
 
-// JSON data (5 Activities: 1 to 5)
-const activitiesData = Array.from({ length: 5 }, (_, i) => {
+// JSON data (6 Activities: 1 to 6)
+const activitiesData = Array.from({ length: 6 }, (_, i) => {
   const num = i + 1;
   const category =
     num === 1
@@ -18,6 +18,8 @@ const activitiesData = Array.from({ length: 5 }, (_, i) => {
       ? "Data Analysis"
       : num === 5
       ? "Video Task"
+      : num === 6
+      ? "Awareness Campaign"
       : "Assignment";
 
   const hoverImageUrl =
@@ -31,6 +33,8 @@ const activitiesData = Array.from({ length: 5 }, (_, i) => {
       ? "/activity4_analytics_overview.png"
       : num === 5
       ? "/video_task_proof.png"
+      : num === 6
+      ? "/awareness_campaign_1.jpg"
       : `https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=600&auto=format&fit=crop&sig=${num}`;
 
   return {
