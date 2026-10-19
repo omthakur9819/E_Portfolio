@@ -4,8 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { cn } from "@/lib/utils";
 
-// JSON data (6 Activities: 1 to 6)
-const activitiesData = Array.from({ length: 6 }, (_, i) => {
+// JSON data (7 Activities: 1 to 7)
+const activitiesData = Array.from({ length: 7 }, (_, i) => {
   const num = i + 1;
   const category =
     num === 1
@@ -20,6 +20,8 @@ const activitiesData = Array.from({ length: 6 }, (_, i) => {
       ? "Video Task"
       : num === 6
       ? "Awareness Campaign"
+      : num === 7
+      ? "Green Hackathon"
       : "Assignment";
 
   const hoverImageUrl =
@@ -35,6 +37,8 @@ const activitiesData = Array.from({ length: 6 }, (_, i) => {
       ? "/video_task_proof.png"
       : num === 6
       ? "/awareness_campaign_1.jpg"
+      : num === 7
+      ? "/reform_hero.png"
       : `https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=600&auto=format&fit=crop&sig=${num}`;
 
   return {
@@ -96,7 +100,7 @@ export default function ActivitiesSection() {
         {activitiesData.map((activity) => (
           <a
             key={activity.id}
-            id={activity.id === 1 ? "assignments-01" : activity.id === 6 ? "assignments-06" : `activity-${activity.id}`}
+            id={activity.id === 1 ? "assignments-01" : activity.id === 7 ? "assignments-07" : `activity-${activity.id}`}
             href={activity.slug}
             onMouseEnter={() => setActiveImage(activity.hoverImageUrl)}
             onMouseLeave={() => setActiveImage(null)}

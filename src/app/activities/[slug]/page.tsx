@@ -12,6 +12,8 @@ const activitiesContent: Record<
     pdfUrl?: string;
     liveUrl?: string;
     instagramUrl?: string;
+    githubUrl?: string;
+    datasetUrl?: string;
     campaignInfo?: {
       eventName: string;
       date: string;
@@ -22,6 +24,17 @@ const activitiesContent: Record<
       speech: string;
       publicityMessage: string;
       highlights: string[];
+    };
+    hackathonInfo?: {
+      projectName: string;
+      track: string;
+      techStack: string[];
+      architectureSummary: string;
+      datasetName: string;
+      datasetUrl: string;
+      githubUrl: string;
+      liveUrl: string;
+      keyPillars: { title: string; description: string; badge: string }[];
     };
     evidence: { label: string; url?: string; type: string }[];
     whatILearned: string;
@@ -331,6 +344,147 @@ Do bring your old/unused e-waste gadgets for the collection drive !!
       },
     ],
   },
+  7: {
+    activityTitle:
+      "Activity 07: Green Hackathon: ReForm — AI-Powered E-Waste Plastic Identification & Polymer Upcycling Platform",
+    objective:
+      "To architect, develop, and deploy ReForm for the Green Hackathon—an end-to-end computer vision and deep learning platform engineered to solve the primary bottleneck in circular electronic waste processing: automated plastic polymer identification and hazardous additive screening. ReForm combines a dual-stage MobileNetV2 transfer-learning pipeline (sorting general materials and electronic plastic casings), an ISO 11469 resin code OCR extraction engine with CLAHE preprocessing and fuzzy matching, Grad-CAM attention heatmaps for explainable AI verification, and an automated Brominated Flame Retardant (BFR) hazard detector to route plastics into safe mechanical upcycling or compliant disposal in accordance with India's E-Waste (Management) Rules 2022.",
+    liveUrl: "https://reform-ai.streamlit.app/",
+    githubUrl: "https://github.com/rujopujo/reform.git",
+    datasetUrl:
+      "https://universe.roboflow.com/manab-jyoti-goswami-lqvan/e-waste-oeexv/dataset/8",
+    hackathonInfo: {
+      projectName: "ReForm",
+      track: "Green Hackathon — AI for Circular Electronics & Material Recovery",
+      techStack: [
+        "TensorFlow 2.15",
+        "MobileNetV2",
+        "EasyOCR",
+        "OpenCV (CLAHE)",
+        "Grad-CAM",
+        "FastAPI",
+        "Streamlit",
+        "Roboflow Universe",
+      ],
+      architectureSummary:
+        "Dual-Stage MobileNetV2 Transfer Learning Pipeline + ISO 11469 Mould Code Scanner + BFR Hazard & EPR Compliance Engine",
+      datasetName: "Roboflow E-Waste Multi-Class Dataset (v8)",
+      datasetUrl:
+        "https://universe.roboflow.com/manab-jyoti-goswami-lqvan/e-waste-oeexv/dataset/8",
+      githubUrl: "https://github.com/rujopujo/reform.git",
+      liveUrl: "https://reform-ai.streamlit.app/",
+      keyPillars: [
+        {
+          title: "Stage 0: Material Sorter",
+          description:
+            "MobileNetV2 model operating at a 70% threshold classifying input items into 6 material streams: plastic, metal, PCB, glass/screen, battery, and unknown. Non-plastic streams automatically receive precious metal recovery routing and hazard instructions via nonplastic_routes.json.",
+          badge: "6 Material Classes",
+        },
+        {
+          title: "Stage 1: Electronic Casing Classifier",
+          description:
+            "MobileNetV2 model trained on plastic components to identify specific e-waste housings: keyboards, computer mice, printer casings, TV panels, remotes, and other plastics, retrieving empirical baseline polymer priors and thermal profiles.",
+          badge: "7 Plastic Sub-Types",
+        },
+        {
+          title: "ISO 11469 Resin Code OCR Engine",
+          description:
+            "EasyOCR integrated with OpenCV adaptive histogram equalization (CLAHE), bilateral edge-preserving filtering, and fuzzy Levenshtein distance string matching to reliably decipher faint molded stamps (>ABS<, >PC+ABS<, >PC<, >HIPS<, >PP<, >PVC<, >PE<).",
+          badge: "Fuzzy OCR + CLAHE",
+        },
+        {
+          title: "Grad-CAM Explainability & BFR Hazard Detection",
+          description:
+            "Generates visual activation heatmaps to verify spatial feature attention on plastic contours and executes automated screening for hazardous Brominated Flame Retardants (DecaBDE/TBBPA) to prevent carcinogenic emissions during mechanical remelting.",
+          badge: "Explainable AI + Safety",
+        },
+      ],
+    },
+    evidenceImages: [
+      "/reform_streamlit_step1.png",
+      "/reform_streamlit_camera.png",
+      "/reform_streamlit_inference.png",
+      "/reform_streamlit_report.png",
+    ],
+    evidence: [
+      {
+        label:
+          "Streamlit UI Step 1: E-Waste Item Photograph & Source Selector",
+        url: "/reform_streamlit_step1.png",
+        type: "Production UI",
+      },
+      {
+        label:
+          "Live Camera Stream: Real-Time Scanning & Capture of Computer Mouse Housing",
+        url: "/reform_streamlit_camera.png",
+        type: "Live Camera Feed",
+      },
+      {
+        label:
+          "Dual-Stage AI Classification: Material (Plastic 98.6%) & Item (Mouse 99.6%)",
+        url: "/reform_streamlit_inference.png",
+        type: "Model Inference",
+      },
+      {
+        label:
+          "Automated Polymer Diagnostics: ABS Resin Estimation & BFR Hazard Screening",
+        url: "/reform_streamlit_report.png",
+        type: "Polymer & Hazard Report",
+      },
+      {
+        label:
+          "Open-Source GitHub Repository: rujopujo/reform (Source Code & Model Weights)",
+        url: "https://github.com/rujopujo/reform.git",
+        type: "GitHub Repository",
+      },
+      {
+        label:
+          "Live Cloud Application: reform-ai.streamlit.app (Interactive Production Deployment)",
+        url: "https://reform-ai.streamlit.app/",
+        type: "Live Streamlit Web App",
+      },
+      {
+        label:
+          "Roboflow E-Waste Computer Vision Dataset v8 (1,200+ Annotated Training Samples)",
+        url: "https://universe.roboflow.com/manab-jyoti-goswami-lqvan/e-waste-oeexv/dataset/8",
+        type: "Computer Vision Dataset",
+      },
+    ],
+    whatILearned:
+      "Architecting ReForm for the Green Hackathon was a transformative experience in bridging deep learning computer vision with circular manufacturing engineering. I learned that the primary roadblock in mechanical e-waste plastic recycling is polymer cross-contamination: blending just 2% of incompatible polymers (such as mixing ABS with PC or HIPS) drastically degrades tensile strength, rendering recycled plastic brittle and unmarketable. Designing a two-stage hierarchical architecture proved substantially more accurate than monolithic classification—Stage 0 reliably intercepts hazardous components (PCBs and lithium batteries) before Stage 1 determines specific plastic housing types. Furthermore, implementing EasyOCR with CLAHE contrast enhancement and fuzzy string matching against ISO 11469 standards allowed the system to verify manufacturer markings that standard classifiers miss. Incorporating Grad-CAM heatmaps provided essential model interpretability, verifying that our convolutional feature activations focused on actual molded stamps and edge geometries rather than background noise.",
+    sustainabilityConnection:
+      "Plastic housings represent over 20–25% of the total mass of electronic waste generated globally, yet less than 12% is formally recycled, with the remainder relegated to landfills or open incineration. A significant environmental hazard stems from Brominated Flame Retardants (BFRs) like DecaBDE embedded in older electronics casings; when melted without detection, they produce highly toxic polybrominated dibenzodioxins and furans. ReForm directly confronts this environmental crisis by combining automated polymer sorting with strict BFR hazard detection. By accurately isolating pure ABS, PC+ABS, and HIPS polymers, ReForm enables closed-loop upcycling into high-value 3D printing filaments, modular electronic enclosures, and industrial components while flagging hazardous fractions for compliant disposal. This directly advances India's E-Waste (Management) Rules 2022 and Extended Producer Responsibility (EPR) mandates, conserving virgin petrochemicals and reducing industrial greenhouse gas emissions.",
+    reflection: {
+      surprisedMe:
+        "The critical vulnerability of mechanical recycling to chemical additives: learning that invisible Brominated Flame Retardants (BFRs) make otherwise high-grade ABS plastic hazardous to remelt, and how ubiquitous molded ISO 11469 stamps are on device casings despite being entirely overlooked by informal scrap sorters.",
+      challengeFaced:
+        "Handling low-contrast, scratched, and textured black electronic casings during OCR extraction. We overcame this by engineering a custom image preprocessing pipeline using bilateral filtering and CLAHE adaptive thresholding combined with fuzzy Levenshtein distance matching.",
+      doDifferently:
+        "Deploy lightweight quantized ONNX or TensorFlow Lite models directly onto edge devices with a connected handheld near-infrared (NIR) spectrometer, enabling ultra-fast real-time polymer verification at physical industrial scrap sorting conveyor belts.",
+    },
+    references: [
+      {
+        title: "ReForm: Open-Source GitHub Repository (rujopujo/reform)",
+        link: "https://github.com/rujopujo/reform.git",
+      },
+      {
+        title: "ReForm: Live Production Cloud Web Application",
+        link: "https://reform-ai.streamlit.app/",
+      },
+      {
+        title: "Roboflow Universe: E-Waste Computer Vision Dataset (v8)",
+        link: "https://universe.roboflow.com/manab-jyoti-goswami-lqvan/e-waste-oeexv/dataset/8",
+      },
+      {
+        title: "ISO 11469:2016 — Generic Identification and Marking of Plastics Products",
+        link: "https://www.iso.org/standard/63201.html",
+      },
+      {
+        title: "Ministry of Environment, Forest and Climate Change (MoEFCC) — E-Waste (Management) Rules 2022 & EPR Framework",
+        link: "https://cpcb.nic.in",
+      },
+    ],
+  },
 };
 
 export default async function ActivityPage({
@@ -342,7 +496,7 @@ export default async function ActivityPage({
   const rawSlug = resolvedParams?.slug || "";
   const idStr = rawSlug.replace("activity-", "");
   const id = parseInt(idStr, 10);
-  const isValid = !isNaN(id) && id >= 1 && id <= 6;
+  const isValid = !isNaN(id) && id >= 1 && id <= 7;
 
   if (!isValid) {
     return (
@@ -400,6 +554,8 @@ export default async function ActivityPage({
       ? "Video Task"
       : id === 6
       ? "Awareness Campaign"
+      : id === 7
+      ? "Green Hackathon"
       : "Assignment";
 
   return (
@@ -571,6 +727,112 @@ export default async function ActivityPage({
                   </div>
                 </div>
               )}
+              {data.hackathonInfo && (
+                <div className="flex flex-col gap-6 pt-6 border-t border-neutral-800/80">
+                  {/* Hackathon Metrics Bar */}
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                    <div className="p-3.5 bg-neutral-900/60 rounded border border-neutral-800">
+                      <div className="text-[10px] font-mono uppercase tracking-wider text-neutral-400">
+                        Event
+                      </div>
+                      <div className="text-sm sm:text-base font-bold text-emerald-400 mt-1 flex items-center gap-2">
+                        <span>🌱</span> Green Hackathon
+                      </div>
+                    </div>
+                    <div className="p-3.5 bg-neutral-900/60 rounded border border-neutral-800">
+                      <div className="text-[10px] font-mono uppercase tracking-wider text-neutral-400">
+                        Project Name
+                      </div>
+                      <div className="text-sm sm:text-base font-bold text-white mt-1 flex items-center gap-2">
+                        <span>⚡</span> {data.hackathonInfo.projectName}
+                      </div>
+                    </div>
+                    <div className="p-3.5 bg-neutral-900/60 rounded border border-neutral-800">
+                      <div className="text-[10px] font-mono uppercase tracking-wider text-neutral-400">
+                        Core Architecture
+                      </div>
+                      <div className="text-sm sm:text-base font-bold text-cyan-400 mt-1 flex items-center gap-2">
+                        <span>🧠</span> Dual MobileNetV2
+                      </div>
+                    </div>
+                    <div className="p-3.5 bg-neutral-900/60 rounded border border-neutral-800">
+                      <div className="text-[10px] font-mono uppercase tracking-wider text-neutral-400">
+                        Dataset
+                      </div>
+                      <div className="text-sm sm:text-base font-bold text-purple-400 mt-1 flex items-center gap-2">
+                        <span>📊</span> Roboflow E-Waste v8
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Tech Stack Pills */}
+                  <div className="flex flex-wrap gap-2">
+                    {data.hackathonInfo.techStack.map((tech, i) => (
+                      <span
+                        key={i}
+                        className="text-xs font-mono px-3 py-1 bg-neutral-900 border border-neutral-700/60 rounded-full text-neutral-300"
+                      >
+                        ⚡ {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Key Pillars Grid */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
+                    {data.hackathonInfo.keyPillars.map((pillar, idx) => (
+                      <div
+                        key={idx}
+                        className="p-5 bg-neutral-900/70 rounded border border-neutral-800 hover:border-emerald-500/40 transition-colors flex flex-col justify-between"
+                      >
+                        <div>
+                          <div className="flex items-center justify-between mb-2.5">
+                            <h3 className="text-sm font-bold text-white uppercase tracking-wide">
+                              {pillar.title}
+                            </h3>
+                            <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-emerald-950 text-emerald-400 border border-emerald-800/60">
+                              {pillar.badge}
+                            </span>
+                          </div>
+                          <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed font-normal">
+                            {pillar.description}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Interactive Links Row */}
+                  <div className="flex flex-wrap items-center gap-3 pt-3 border-t border-neutral-800/80">
+                    <span className="text-xs font-mono text-neutral-400">
+                      Project Links:
+                    </span>
+                    <a
+                      href={data.hackathonInfo.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs font-mono rounded transition-colors interactable"
+                    >
+                      🚀 Launch Streamlit Demo ↗
+                    </a>
+                    <a
+                      href={data.hackathonInfo.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-neutral-900 hover:bg-neutral-800 text-neutral-200 border border-neutral-700 text-xs font-mono rounded transition-colors interactable"
+                    >
+                      💻 GitHub Source Code ↗
+                    </a>
+                    <a
+                      href={data.hackathonInfo.datasetUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-purple-500/10 hover:bg-purple-500/20 text-purple-400 border border-purple-500/30 text-xs font-mono rounded transition-colors interactable"
+                    >
+                      📁 Roboflow Dataset ↗
+                    </a>
+                  </div>
+                </div>
+              )}
             </section>
 
             {/* 3. Evidence */}
@@ -628,7 +890,55 @@ export default async function ActivityPage({
                         <polyline points="15 3 21 3 21 9" />
                         <line x1="10" y1="14" x2="21" y2="3" />
                       </svg>
-                      Open Live Streamlit Dashboard ↗
+                      Open Live App ↗
+                    </a>
+                  )}
+                  {data.githubUrl && (
+                    <a
+                      href={data.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-neutral-900 hover:bg-neutral-800 border border-neutral-700 hover:border-emerald-400 text-neutral-200 hover:text-emerald-400 text-xs font-mono tracking-wider uppercase rounded transition-all interactable group"
+                    >
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="group-hover:scale-110 transition-transform"
+                      >
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                      </svg>
+                      GitHub Repo ↗
+                    </a>
+                  )}
+                  {data.datasetUrl && (
+                    <a
+                      href={data.datasetUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-neutral-900 hover:bg-neutral-800 border border-neutral-700 hover:border-purple-400 text-neutral-200 hover:text-purple-400 text-xs font-mono tracking-wider uppercase rounded transition-all interactable group"
+                    >
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="group-hover:scale-110 transition-transform text-purple-400"
+                      >
+                        <ellipse cx="12" cy="5" rx="9" ry="3" />
+                        <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+                        <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+                      </svg>
+                      Roboflow Dataset ↗
                     </a>
                   )}
                   {data.instagramUrl && (
@@ -676,7 +986,7 @@ export default async function ActivityPage({
                         className={`overflow-hidden rounded border border-neutral-800 flex justify-center p-3 transition-colors ${
                           imgUrl.includes("video_task")
                             ? "bg-neutral-950 max-w-xl w-full"
-                            : imgUrl.includes("awareness_campaign")
+                            : imgUrl.includes("awareness_campaign") || imgUrl.includes("reform")
                             ? "bg-neutral-900/90 w-full"
                             : "bg-white"
                         }`}
